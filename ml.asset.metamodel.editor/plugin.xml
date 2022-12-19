@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mlam -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mlam.presentation.MlamModelWizardID"
+            name="%_UI_MlamModelWizard_label"
+            class="mlam.presentation.MlamModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MlamModelFile.gif">
+         <description>%_UI_MlamModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mlam -->
+      <editor
+            id="mlam.presentation.MlamEditorID"
+            name="%_UI_MlamEditor_label"
+            icon="icons/full/obj16/MlamModelFile.gif"
+            extensions="mlam"
+            class="mlam.presentation.MlamEditor"
+            contributorClass="mlam.presentation.MlamActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

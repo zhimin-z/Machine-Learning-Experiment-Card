@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ml.asset.metamodel/src" modelPluginID="ml.asset.metamodel"
+    modelName="Mlam" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mlam.ecore</foreignModel>
+  <genPackages prefix="Mlam" disposableProviderFactory="true" ecorePackage="mlam.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mlam.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="mlam.ecore#//DataType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="mlam.ecore#//DataType/Float"/>
+      <genEnumLiterals ecoreEnumLiteral="mlam.ecore#//DataType/Int"/>
+    </genEnums>
+    <genClasses ecoreClass="mlam.ecore#//Project">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Project/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Project/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Project/CreationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Project/LastUpdateDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Project/Description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Project/experiment"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Experiment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Experiment/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Experiment/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Experiment/CreationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Experiment/LastUpdateDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Experiment/Description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Experiment/run"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Run">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Run/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Run/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Run/CreationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Run/LastUpdateDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Run/Description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Run/asset"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mlam.ecore#//Asset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/Id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/Version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/CreationDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/LastUpdateDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Asset/Description"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Code">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Code/dependency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Code/sourceFile"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//ProductionCode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//ProductionCode/orchestrationScript"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//ConfigurationFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//ConfigurationFile/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//SourceFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//SourceFile/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Dependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Dependency/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Model/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Model/hyperparameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Model/neuralArchitecture"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Parameter/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Hyperparameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Hyperparameter/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//NeuralArchitecture">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//NeuralArchitecture/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Data">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Data/dataset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Data/generatedArtifact"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Data/log"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Dataset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Dataset/data"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//TrainData"/>
+    <genClasses ecoreClass="mlam.ecore#//TestData"/>
+    <genClasses ecoreClass="mlam.ecore#//EvalData"/>
+    <genClasses image="false" ecoreClass="mlam.ecore#//Documentation"/>
+    <genClasses ecoreClass="mlam.ecore#//Specification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Specification/problemDefinition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Specification/observation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Specification/decision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Specification/metrics"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Log">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mlam.ecore#//Log/metrics"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//RandomSeed">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//RandomSeed/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//ExecutionData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//ExecutionData/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//Feature"/>
+    <genClasses ecoreClass="mlam.ecore#//Explainable"/>
+    <genClasses ecoreClass="mlam.ecore#//Metrics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//Metrics/dtype"/>
+    </genClasses>
+    <genClasses ecoreClass="mlam.ecore#//GeneratedArtifact">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mlam.ecore#//GeneratedArtifact/dtype"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
